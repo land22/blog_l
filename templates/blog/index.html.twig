@@ -3,18 +3,50 @@
 {% block title %}Hello BlogController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <section class="article">
+        <article>
+            <h2>Titre de l'article</h2>
+            <div class="metadata"> Ecrire le 10/05/2018 à 19:00 dans la categorie Politique</div>
+            <div class="content">
+                <img src="http://placehold.it/350x150">
+                <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
+                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
+                    assembla</p>
+                <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
+                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
+                    assembla</p>
+                <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
+            </div>
+        </article>
+        <article>
+            <h2>Titre de l'article</h2>
+            <div class="metadata"> Ecrire le 10/05/2018 à 19:00 dans la categorie Politique</div>
+            <div class="content">
+                <img src="http://placehold.it/350x150">
+                <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
+                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
+                    assembla</p>
+                <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
+                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
+                    assembla</p>
+                <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
+            </div>
+        </article>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        <article>
+            <h2>Titre de l'article</h2>
+            <div class="metadata"> Ecrire le 10/05/2018 à 19:00 dans la categorie Politique</div>
+            <div class="content">
+                <img src="http://placehold.it/350x150">
+                <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
+                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
+                    assembla</p>
+                <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
+                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
+                    assembla</p>
+                <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
+            </div>
+        </article>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/blog_l/src/Controller/BlogController.php'|file_link(0) }}">src/Controller/BlogController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/blog_l/templates/blog/index.html.twig'|file_link(0) }}">templates/blog/index.html.twig</a></code></li>
-    </ul>
-</div>
+    </section>
 {% endblock %}
