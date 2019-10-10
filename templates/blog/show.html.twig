@@ -2,26 +2,11 @@
 
 {% block body %}
     <article>
-        <h2>Titre de l'article</h2>
-        <div class="metadata"> Ecrire le 10/05/2018 à 19:00 dans la categorie Politique</div>
+        <h2>{{ article.title }}</h2>
+        <div class="metadata"> Ecrire le {{ article.createdAt | date('d/m/Y') }} à {{ article.createdAt | date('H:i') }}</div>
         <div class="content">
-            <img src="http://placehold.it/350x150">
-            <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-                Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-                assembla</p>
-            <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-                Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-                assembla</p>
-            <hr>
-            <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-                Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-                assembla
-                Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-                Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-                assembla
-                Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-                Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-                assembla</p>
+            <img src="{{ article.image }}">
+            {{ article.content | raw }}
 
         </div>
     </article>

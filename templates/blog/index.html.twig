@@ -4,49 +4,17 @@
 
 {% block body %}
     <section class="article">
+        {% for article in articles %}
         <article>
-            <h2>Titre de l'article</h2>
-            <div class="metadata"> Ecrire le 10/05/2018 à 19:00 dans la categorie Politique</div>
+            <h2>{{ article.title }}</h2>
+            <div class="metadata"> Ecrire le {{ article.createdAt | date('d/m/Y') }} à {{ article.createdAt | date('H:i') }} dans la categorie Politique</div>
             <div class="content">
-                <img src="http://placehold.it/350x150">
-                <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-                    assembla</p>
-                <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-                    assembla</p>
-                <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
+                <img src="{{ article.image }}">
+                {{ article.content | raw }}
+                <a href="{{ path('blog_show', {'id':article.id}) }}" class="btn btn-primary">Lire la suite</a>
             </div>
         </article>
-        <article>
-            <h2>Titre de l'article</h2>
-            <div class="metadata"> Ecrire le 10/05/2018 à 19:00 dans la categorie Politique</div>
-            <div class="content">
-                <img src="http://placehold.it/350x150">
-                <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-                    assembla</p>
-                <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-                    assembla</p>
-                <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
-            </div>
-        </article>
-
-        <article>
-            <h2>Titre de l'article</h2>
-            <div class="metadata"> Ecrire le 10/05/2018 à 19:00 dans la categorie Politique</div>
-            <div class="content">
-                <img src="http://placehold.it/350x150">
-                <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-                    assembla</p>
-                <p> Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
-                    assembla</p>
-                <a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
-            </div>
-        </article>
+        {% endfor %}
 
     </section>
 {% endblock %}
